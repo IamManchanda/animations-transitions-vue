@@ -3,6 +3,7 @@
     <div class="grid-x grid-margin-x">
       <div class="cell medium-8 medium-offset-2">
         <h1>Animations &amp; Transitions</h1>
+        <p>Animate.css Version</p>
         <hr> 
         <button class="button primary" @click="show = !show">Toggle Info</button>
         <transition mode="out-in" enter-class="" enter-active-class="animated bounceInLeft" leave-class="" leave-active-class="animated bounceOutRight" appear>
