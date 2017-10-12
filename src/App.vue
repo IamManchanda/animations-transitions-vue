@@ -5,7 +5,7 @@
         <h1>Animations &amp; Transitions</h1>
         <hr> 
         <button class="button primary" @click="show = !show">Toggle Info</button>
-        <transition mode="out-in" enter-class="" enter-active-class="animated bounceInLeft" leave-class="" leave-active-class="animated bounceOutRight" appear>
+        <transition mode="out-in" name="slide" type="animation" appear>
           <div class="callout primary" key="primary" v-if="show">
             <h5>This is the Primary Information</h5>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat earum aliquid, incidunt nulla harum voluptates sequi, repellat explicabo, veritatis ipsam aliquam minima! Corporis debitis placeat saepe asperiores, voluptatibus omnis. In.</p>
