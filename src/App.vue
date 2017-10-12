@@ -3,24 +3,11 @@
     <div class="grid-x grid-margin-x">
       <div class="cell medium-8 medium-offset-2">
         <h1>Animations &amp; Transitions</h1>
-        <p>Custom CSS Version</p>
+        <p>Dynamic Components</p>
         <hr> 
-        <button class="button primary" @click="show = !show">Toggle Info</button>
-        <transition mode="out-in" name="slide" type="animation" appear>
-          <div class="callout primary" key="primary" v-if="show">
-            <h5>This is the Primary Information</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat earum aliquid, incidunt nulla harum voluptates sequi, repellat explicabo, veritatis ipsam aliquam minima! Corporis debitis placeat saepe asperiores, voluptatibus omnis. In.</p>
-            <button class="close-button" aria-label="Dismiss alert" type="button" @click="show = false">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="callout alert" key="alert" v-else>
-            <h5>This is an Alert Information</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat earum aliquid, incidunt nulla harum voluptates sequi, repellat explicabo, veritatis ipsam aliquam minima! Corporis debitis placeat saepe asperiores, voluptatibus omnis. In.</p>
-            <button class="close-button" aria-label="Dismiss alert" type="button" @click="show = true">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
+        <button class="button primary" @click="selectedComponent == 'app-primary-callout' ? selectedComponent = 'app-alert-callout' : selectedComponent = 'app-primary-callout'">Toggle Components</button>
+        <transition name="slide" mode="out-in" type="animation" appear>
+          <component :is="selectedComponent"></component>
         </transition>
       </div>
     </div>
@@ -28,12 +15,19 @@
 </template>
 
 <script>
+  import AppPrimaryCallout from './components/AppPrimaryCallout.vue';
+  import AppAlertCallout from './components/AppAlertCallout.vue';
+
   export default {
     data () {
       return {
         show: true,
-        calloutAnimation: 'bounce'
+        calloutAnimation: 'bounce',
+        selectedComponent: 'app-primary-callout'
       };
+    },
+    components: {
+      AppPrimaryCallout, AppAlertCallout
     }
   };
 </script>
