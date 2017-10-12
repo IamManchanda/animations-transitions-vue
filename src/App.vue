@@ -4,15 +4,6 @@
       <div class="cell medium-8 medium-offset-2">
         <h1>Animations &amp; Transitions</h1>
         <hr> 
-        <!-- This select dropdown is not working right now, will fix it soon. -->
-        <!-- <select v-model="calloutAnimation"> 
-          <option value="bounce">Bounce</option>
-          <option value="fade">Fade</option>
-          <option value="slide">Slide</option>
-          <option value="zoom">Zoom</option>
-        </select>
-        <h3> {{ calloutAnimation }} </h3>
-        <hr /> -->
         <button class="button primary" @click="show = !show">Toggle Info</button>
         <transition mode="out-in" enter-class="" enter-active-class="animated bounceInLeft" leave-class="" leave-active-class="animated bounceOutRight" appear>
           <div class="callout primary" key="primary" v-if="show">
