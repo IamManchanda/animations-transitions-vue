@@ -3,7 +3,7 @@
     <div class="grid-x grid-margin-x">
       <div class="cell medium-8 medium-offset-2">
         <h1>Animations &amp; Transitions</h1>
-        <p>Custom CSS Version</p>
+        <p>JavaScript Version</p>
         <hr> 
         <button class="button primary" @click="show = !show">Toggle Info</button>
         <transition mode="out-in" name="slide" type="animation" appear>
